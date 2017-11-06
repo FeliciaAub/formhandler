@@ -1,23 +1,7 @@
 {
   "name": "formhandler",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "^8.0.0",
-    "browserify": "^14.5.0",
-    "nodemon": "^1.12.1",
-    "watchify": "^3.9.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
@@ -25,11 +9,38 @@
     "build": "browserify -d app/scripts/src/main.js -o app/scripts/dist/main.js",
     "watch": "watchify -v -d app/scripts/src/main.js -o app/scripts/dist/main.js"
   },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "nodemon": "^1.12.1",
+    "watchify": "^3.9.0"
+  },
   "browserify": {
     "transform": [
-      ["babelify", {"sourceMap": true}]
+      [
+        "babelify",
+        {
+          "sourceMap": true
+        }
+      ]
     ]
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commonjs": "^0.0.1",
+    "websocket": "^1.0.25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FeliciaAub/formhandler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FeliciaAub/formhandler/issues"
+  },
+  "homepage": "https://github.com/FeliciaAub/formhandler#readme",
+  "description": ""
 }

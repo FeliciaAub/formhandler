@@ -18,16 +18,20 @@ import $ from 'jQuery';
       this.$formElement.on('submit', function (event) {
         event.preventDefault();
 
-        const data = {};
+        let data = {};
         $(this).serializeArray().forEach(item => {
           data[item.name] = item.value;
           console.log(`${item.name} is ${item.value}`);
+
+
         });
-        console.log(data);
-        fn(data)
+
+       fn(data)
           .then(() => {
+            console.log(data);
             this.reset();
             this.elements[0].focus();
+
           });
       });
     }

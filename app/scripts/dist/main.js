@@ -42,8 +42,9 @@ var FormHandler = function () {
           data[item.name] = item.value;
           console.log(item.name + ' is ' + item.value);
         });
-        console.log(data);
+
         fn(data).then(function () {
+          console.log(data);
           _this.reset();
           _this.elements[0].focus();
         });
